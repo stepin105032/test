@@ -1,0 +1,70 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<list>
+#include<iterator>
+#include<sstream>
+#include<string>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+class test
+{public:
+ string name,dob,id;
+ int python,cpp,total;
+  test(string A, string B, string C, int D ,int E)
+  : name(A),dob(B),id(C), python(D), cpp(E)
+  {
+
+  }
+
+};
+void readit(list<test>& );
+int main()
+{
+    list<test> thelist;
+readit(thelist);
+
+list<test>::iterator iter;
+for(iter=thelist.begin();iter!=thelist.end();++iter)
+{
+
+    cout<<iter->name<<" "<<iter->dob<<" "<<iter->id<<" "<<iter->python<<" "<<iter->cpp<<"\n";
+}
+    return 0;
+}
+
+void readit(list<test> &thelist)
+    {
+        string S, T, A,B,C,D,E,F;
+
+        fstream fin;
+        fin.open("Sample100.csv", ios::in);
+        while( getline(fin, S))
+        {
+            stringstream X(S);
+
+            getline(X, A, ',');
+            getline(X, B, ',');
+            getline(X, C, ',');
+            getline(X, D, ',');
+            getline(X, E, ',');
+
+            test temp(A,B,C,stoi(D),stoi(E));
+
+            thelist.push_back(temp);
+
+
+        }
+
+
+
+    }

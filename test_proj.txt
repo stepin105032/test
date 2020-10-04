@@ -1,0 +1,45 @@
+#ifndef EMPLOYEE_H_INCLUDED
+#define EMPLOYEE_H_INCLUDED
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Employee
+{
+
+    public:
+    string name,dob;
+    long int ID;
+    Employee(string A,string B, long int F)
+    :name(A),dob(B),ID(F)
+    {
+
+    }
+};
+
+#endif // EMPLOYEE_H_INCLUDED
+
+
+#ifndef GENERATOR_H_INCLUDED
+#define GENERATOR_H_INCLUDED
+#include<iostream>
+#include<string.h>
+
+class Generator: public Employee
+{public: int total_marks,percentile;
+
+Generator(string A,string B,long int J,int K,int L)
+  :Employee(A,B,C),total_marks(K),percentile(L)
+  {
+
+  }
+  void display()
+  {
+
+  }
+
+};
+
+
+
+#endif // GENERATOR_H_INCLUDED
+
